@@ -1,4 +1,56 @@
 Rails.application.routes.draw do
+  devise_for :users
+  # Routes for the Contact resource:
+  # CREATE
+  get('/contacts/new', { :controller => 'contacts', :action => 'new' })
+  get('/create_contact', { :controller => 'contacts', :action => 'create' })
+
+  # READ
+  get('/contacts', { :controller => 'contacts', :action => 'index' })
+  get('/contacts/:id', { :controller => 'contacts', :action => 'show' })
+
+  # UPDATE
+  get('/contacts/:id/edit', { :controller => 'contacts', :action => 'edit' })
+  get('/update_contact/:id', { :controller => 'contacts', :action => 'update' })
+
+  # DELETE
+  get('/delete_contact/:id', { :controller => 'contacts', :action => 'destroy' })
+  #------------------------------
+
+  # Routes for the Interaction resource:
+  # CREATE
+  get('/interactions/new', { :controller => 'interactions', :action => 'new' })
+  get('/create_interaction', { :controller => 'interactions', :action => 'create' })
+
+  # READ
+  get('/interactions', { :controller => 'interactions', :action => 'index' })
+  get('/interactions/:id', { :controller => 'interactions', :action => 'show' })
+
+  # UPDATE
+  get('/interactions/:id/edit', { :controller => 'interactions', :action => 'edit' })
+  get('/update_interaction/:id', { :controller => 'interactions', :action => 'update' })
+
+  # DELETE
+  get('/delete_interaction/:id', { :controller => 'interactions', :action => 'destroy' })
+  #------------------------------
+
+  # Routes for the Company resource:
+  # CREATE
+  get('/companies/new', { :controller => 'companies', :action => 'new' })
+  get('/create_company', { :controller => 'companies', :action => 'create' })
+
+  # READ
+  get('/companies', { :controller => 'companies', :action => 'index' })
+  get('/companies/:id', { :controller => 'companies', :action => 'show' })
+
+  # UPDATE
+  get('/companies/:id/edit', { :controller => 'companies', :action => 'edit' })
+  get('/update_company/:id', { :controller => 'companies', :action => 'update' })
+
+  # DELETE
+  get('/delete_company/:id', { :controller => 'companies', :action => 'destroy' })
+  #------------------------------
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

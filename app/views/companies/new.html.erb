@@ -1,0 +1,71 @@
+<div class="page-header">
+  <h1>Add Company</h1>
+</div>
+
+<% if @company.errors.any? %>
+  <% @company.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+
+<form action="/create_company" class="form-horizontal">
+  <!-- Label and input for name -->
+  <div class="form-group">
+    <label for="name" class="col-sm-2 control-label">
+      Name
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @company.name %>">
+    </div>
+  </div>
+
+  <!-- Label and input for status -->
+  <div class="form-group">
+    <label for="status" class="col-sm-2 control-label">
+      Status
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="status" name="status" placeholder="Status" class="form-control" value="<%= @company.status %>">
+    </div>
+  </div>
+
+  <!-- Label and input for owner_id -->
+  <div class="form-group">
+    <label for="owner_id" class="col-sm-2 control-label">
+      Owner
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="owner_id" name="owner_id" placeholder="Owner" class="form-control" value="<%= @company.owner_id %>">
+    </div>
+  </div>
+
+  <!-- Label and input for contact_id -->
+  <div class="form-group">
+    <label for="contact_id" class="col-sm-2 control-label">
+      Contact
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="contact_id" name="contact_id" placeholder="Contact" class="form-control" value="<%= @company.contact_id %>">
+    </div>
+  </div>
+
+  <!-- Label and input for conversation_history -->
+  <div class="form-group">
+    <label for="conversation_history" class="col-sm-2 control-label">
+      Conversation history
+    </label>
+    <div class="col-sm-10">
+      <textarea id="conversation_history" name="conversation_history" placeholder="Conversation history" class="form-control" rows="3"><%= @company.conversation_history %></textarea>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <input type="submit" value="Create Company" class="btn btn-primary">
+    </div>
+  </div>
+</form>
