@@ -21,9 +21,29 @@
     <% @contacts.each do |contact| %>
       <tr>
         <td><%= contact.name %></td>
-        <td><%= contact.company_id %></td>
-        <td><%= contact.hr %></td>
-        <td><%= contact.kelloggalum %></td>
+        <td><%= contact.company.name %></td>
+        <td>
+          <% if contact.hr? %>
+            <button type="button" class="btn btn-default btn-success">
+              <span class="glyphicon glyphicon-ok"></span>
+            </button>
+          <% else %>
+            <button type="button" class="btn btn-default btn-danger">
+              <span class="glyphicon glyphicon-remove"></span>
+            </button>
+          <% end %>
+        </td>
+        <td>
+        <% if contact.kelloggalum? %>
+            <button type="button" class="btn btn-default btn-success">
+              <span class="glyphicon glyphicon-ok"></span>
+            </button>
+          <% else %>
+            <button type="button" class="btn btn-default btn-danger">
+              <span class="glyphicon glyphicon-remove"></span>
+            </button>
+          <% end %>
+        </td>
         <td>
           <a href="/contacts/<%= contact.id %>" class="btn btn-primary">
             <i class="fa fa-search-plus"></i>
