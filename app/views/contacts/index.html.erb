@@ -7,10 +7,10 @@
 <table class="table table-hover">
   <thead>
     <tr>
-      <th>Company</th>
-      <th>Hr</th>
-      <th>Kelloggalum</th>
       <th>Name</th>
+      <th>Company</th>
+      <th>HR</th>
+      <th>Kellogg Alum</th>
       <th></th>
       <th></th>
       <th></th>
@@ -20,10 +20,10 @@
   <tbody>
     <% @contacts.each do |contact| %>
       <tr>
+        <td><%= contact.name %></td>
         <td><%= contact.company_id %></td>
         <td><%= contact.hr %></td>
         <td><%= contact.kelloggalum %></td>
-        <td><%= contact.name %></td>
         <td>
           <a href="/contacts/<%= contact.id %>" class="btn btn-primary">
             <i class="fa fa-search-plus"></i>

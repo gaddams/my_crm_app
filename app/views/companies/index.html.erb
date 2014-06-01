@@ -8,9 +8,9 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Contact</th>
       <th>Status</th>
       <th>Owner</th>
-      <th>Contact</th>
       <th>Conversation history</th>
       <th></th>
       <th></th>
@@ -22,9 +22,9 @@
     <% @companies.each do |company| %>
       <tr>
         <td><%= company.name %></td>
+        <td><%= company.contact_id %></td>
         <td><%= company.status %></td>
         <td><%= company.owner_id %></td>
-        <td><%= company.contact_id %></td>
         <td><%= company.conversation_history %></td>
         <td>
           <a href="/companies/<%= company.id %>" class="btn btn-primary">
