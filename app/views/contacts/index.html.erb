@@ -21,7 +21,7 @@
     <% @contacts.each do |contact| %>
       <tr>
         <td><%= contact.name %></td>
-        <td><%= contact.company.name %></td>
+        <td><%= contact.company_id %></td>
         <td>
           <% if contact.hr? %>
             <button type="button" class="btn btn-default btn-success">
