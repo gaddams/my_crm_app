@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'interaction#index'
+
+  root 'interactions#index'
   # Routes for the Contact resource:
   # CREATE
   get('/contacts/new', { :controller => 'contacts', :action => 'new' })
