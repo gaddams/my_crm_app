@@ -3,5 +3,5 @@ class Company < ActiveRecord::Base
 	has_many :contacts
 	has_many :interactions
 
-	validates :user_id, :presence => true
+	validates :name, :presence => true, :uniqueness => {:scope => :contact_id}
 end
