@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20140601002109) do
 
   create_table "interactions", force: true do |t|
     t.integer  "user_id"
-    t.string   "contact_id"
+    t.integer  "contact_id"
     t.date     "date"
     t.text     "message"
     t.datetime "lastremindedon"

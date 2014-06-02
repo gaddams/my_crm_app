@@ -30,32 +30,33 @@ company_hashes.each do |company_hash|
   company = Company.new
   company.name = company_hash[:name]
   company.status = company_hash[:status]
-  company.contact_id = company_has[:contact_id]
+  company.contact_id = company_hash[:contact_id]
 
   random_user = User.offset(rand(User.count)).limit(1).first
-  contact.owner_id = random_user.id
-  conatct.save
+  company.owner_id = random_user.id
+  company.save
 end
 
 puts "There are now #{Company.count} companies."
 
 contact_hashes = [
-{:name => "Amol", :company => 1, :hr => 0, :kelloggalum => 1},
-{:name => "Keith", :company => 1, :hr => 0, :kelloggalum => 1},
-{:name => "Paul", :company => 3, :hr => 0, :kelloggalum => 1},
-{:name => "Autodesk", :company => 5, :hr => 0, :kelloggalum => 1}
+{:name => "Amol", :company_id => 1, :hr => false, :kelloggalum => true},
+{:name => "Keith", :company_id => 1, :hr => false, :kelloggalum => true},
+{:name => "Paul", :company_id => 3, :hr => false, :kelloggalum => true},
+{:name => "Autodesk", :company_id => 5, :hr => false, :kelloggalum => true}
 ]
 
 contact_hashes.each do |contact_hash|
   contact = Contact.new
   contact.name = contact_hash[:name]
-  contact.status = contact_hash[:status]
-  contact.contact_id = contact_hash[:contact_id] 
-  conatct.save
+  contact.company_id = contact_hash[:company_id]
+  contact.hr = contact_hash[:hr]
+  contact.kelloggalum = contact_hash[:kelloggalum] 
+  contact.save
 end
 puts "There are now #{Contact.count} contacts."
 
-interaction_hash = [
+interaction_hashes = [
 {:date => "2014-05-10", :contact_id => 1, :user_id => 1, :message => "blah blah blah", :lastremindedon => "2014-06-01T12:00:00"},
 {:date => "2014-05-12", :contact_id => 1, :user_id => 1, :message => "blah blah blah", :lastremindedon => "2014-06-01T12:00:00"},
 {:date => "2014-05-10", :contact_id => 2, :user_id => 2, :message => "blah blah blah", :lastremindedon => "2014-06-01T12:00:00"},
@@ -69,8 +70,8 @@ interaction_hashes.each do |interaction_hash|
   interaction.date = interaction_hash[:date]
   interaction.message = interaction_hash[:message]
   interaction.contact_id = interaction_hash[:contact_id] 
-  interaction_hash.user_id = interaction_hash[:user_id]
-  interaction_hash.lastremindedon = interaction_hash[:lastremindedon]
+  interaction.user_id = interaction_hash[:user_id]
+  interaction.lastremindedon = interaction_hash[:lastremindedon]
   interaction.save
 end
 
