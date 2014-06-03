@@ -5,7 +5,7 @@ class CreateCompanies < ActiveRecord::Migration
       t.string :status
       t.integer :owner_id
       t.integer :contact_id
-      t.text :conversation_history
+    
 
       t.timestamps
 

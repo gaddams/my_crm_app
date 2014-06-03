@@ -1,22 +1,70 @@
 <div class="page-header">
-  <h1>Company #<%= @company.id %></h1>
+  <h1>Company #<%= @company.id %> - <%= @company.name %> </h1>
 </div>
 
-<dl class="dl-horizontal">
-  <dt>Name</dt>
-  <dd><%= @company.name %></dd>
-
-  <dt>Contact</dt>
-  <dd><%= @company.contact_id %></dd>
-
+<dl>
   <dt>Status</dt>
   <dd><%= @company.status %></dd>
 
   <dt>Owner</dt>
   <dd><%= @company.owner_id %></dd>
-
-  <dt>Conversation history</dt>
-  <dd><%= @company.conversation_history %></dd>
-
 </dl>
 
+<h3>Contacts:</h3>
+  <table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>HR</th>
+      <th>Kellogg Alum</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @company.contacts.each do |contact| %>
+      <tr>
+        <td><%= contact.name %></td>
+        <td>
+          <% if contact.hr? %>
+            <button type="button" class="btn btn-default btn-success">
+              <span class="glyphicon glyphicon-ok"></span>
+            </button>
+          <% else %>
+            <button type="button" class="btn btn-default btn-danger">
+              <span class="glyphicon glyphicon-remove"></span>
+            </button>
+          <% end %>
+        </td>
+        <td>
+        <% if contact.kelloggalum? %>
+            <button type="button" class="btn btn-default btn-success">
+              <span class="glyphicon glyphicon-ok"></span>
+            </button>
+          <% else %>
+            <button type="button" class="btn btn-default btn-danger">
+              <span class="glyphicon glyphicon-remove"></span>
+            </button>
+          <% end %>
+        </td>
+        <td>
+          <a href="/contacts/<%= contact.id %>" class="btn btn-primary">
+            <i class="fa fa-search-plus"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/contacts/<%= contact.id %>/edit" class="btn btn-warning">
+            <i class="fa fa-edit"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/delete_contact/<%= contact.id %>" class="btn btn-danger">
+            <i class="fa fa-trash-o"></i>
+          </a>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
