@@ -25,23 +25,33 @@
 
   <!-- Label and input for contact_id -->
   <div class="form-group">
+
+     <p>Date: <input type="text" id="datepicker"></p>
+
+  <script type="text/javascript">
+    jQuery('#datepicker').datepicker();
+  </script>
+
     <label for="contact_id" class="col-sm-2 control-label">
       Contact
     </label>
     <div class="col-sm-10">
-      <input type="text" id="contact_id" name="contact_id" placeholder="Contact" class="form-control" value="<%= @interaction.contact_id %>">
+      <!-- <input type="text" id="contact_id" name="contact_id" placeholder="Contact" class="form-control" value="<%= @interaction.contact_id %>"> -->
+      <%= select_tag :contact_id, options_from_collection_for_select(Contact.all, :id, :name, @interaction.contact_id), :class => "form-control" %>
     </div>
   </div>
 
   <!-- Label and input for date -->
-  <div class="form-group">
+  <!-- <div class="form-group">
     <label for="date" class="col-sm-2 control-label">
       Date
     </label>
     <div class="col-sm-10">
       <input type="text" id="date" name="date" placeholder="Date" class="form-control" value="<%= @interaction.date %>">
     </div>
-  </div>
+  </div> -->
+
+
 
   <!-- Label and input for message -->
   <div class="form-group">

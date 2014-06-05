@@ -5,7 +5,7 @@ class CreateInteractions < ActiveRecord::Migration
       t.integer :contact_id
       t.date :date
       t.text :message
-      t.datetime :lastremindedon
+      t.date :lastremindedon
 
       t.timestamps
 

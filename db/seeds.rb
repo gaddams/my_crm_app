@@ -55,12 +55,12 @@ end
 puts "There are now #{Contact.count} contacts."
 
 interaction_hashes = [
-{:date => "2014-05-10", :contact_id => 1, :user_id => 1, :message => "blah blah blah", :lastremindedon => "2014-06-01T12:00:00"},
-{:date => "2014-05-12", :contact_id => 1, :user_id => 1, :message => "blah blah blah", :lastremindedon => "2014-06-01T12:00:00"},
-{:date => "2014-05-10", :contact_id => 2, :user_id => 2, :message => "blah blah blah", :lastremindedon => "2014-06-01T12:00:00"},
-{:date => "2014-05-12", :contact_id => 2, :user_id => 2, :message => "blah blah blah", :lastremindedon => "2014-06-01T12:00:00"},
-{:date => "2014-05-10", :contact_id => 3, :user_id => 1, :message => "blah blah blah", :lastremindedon => "2014-06-01T12:00:00"},
-{:date => "2014-05-12", :contact_id => 3, :user_id => 1, :message => "blah blah blah", :lastremindedon => "2014-06-01T12:00:00"}
+{:date => "2014-05-10", :contact_id => 1, :user_id => 1, :message => "blah blah blah", :lastremindedon => "2014-06-01"},
+{:date => "2014-05-12", :contact_id => 1, :user_id => 1, :message => "blah blah blah", :lastremindedon => "2014-06-01"},
+{:date => "2014-05-10", :contact_id => 2, :user_id => 2, :message => "blah blah blah", :lastremindedon => "2014-06-01"},
+{:date => "2014-05-12", :contact_id => 2, :user_id => 2, :message => "blah blah blah", :lastremindedon => "2014-06-01"},
+{:date => "2014-05-10", :contact_id => 3, :user_id => 1, :message => "blah blah blah", :lastremindedon => "2014-06-01"},
+{:date => "2014-05-12", :contact_id => 3, :user_id => 1, :message => "blah blah blah", :lastremindedon => "2014-06-01"}
 ]
 
 interaction_hashes.each do |interaction_hash|
