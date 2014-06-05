@@ -15,9 +15,9 @@ class InteractionsController < ApplicationController
     @interaction = Interaction.new
     @interaction.user_id = params[:user_id]
     @interaction.contact_id = params[:contact_id]
-    @interaction.date = params[:date]
+    @interaction.date = Date.strptime(params[:date], "%m/%d/%Y")
     @interaction.message = params[:message]
-    @interaction.lastremindedon = params[:lastremindedon]
+    @interaction.lastremindedon = Date.strptime(params[:lastremindedon], "%m/%d/%Y")
 
     if @interaction.save
       redirect_to "/interactions", :notice => "Interaction created successfully."
