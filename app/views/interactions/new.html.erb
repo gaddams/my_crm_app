@@ -12,7 +12,7 @@
 <% end %>
 
 
-<form action="/create_interaction" class="form-horizontal">
+<form action="/create_interaction" class="form-horizontal" >
   <!-- Label and input for user_id -->
   <div class="form-group">
     <!-- <label for="user_id" class="col-sm-2 control-label">
@@ -23,15 +23,17 @@
     </div>
   </div>
 
-  <!-- Label and input for contact_id -->
-  <div class="form-group">
 
-     <p>Date: <input type="text" id="datepicker"></p>
+  <!-- <div class="form-group">
+
+     <p>Date: <input type="text" id="datepicker" value="<%= @interaction.date %>"></p>
 
   <script type="text/javascript">
     jQuery('#datepicker').datepicker();
   </script>
+ -->
 
+ <!-- Label and input for contact_id -->
     <label for="contact_id" class="col-sm-2 control-label">
       Contact
     </label>
@@ -42,14 +44,14 @@
   </div>
 
   <!-- Label and input for date -->
-  <!-- <div class="form-group">
+  <div class="form-group">
     <label for="date" class="col-sm-2 control-label">
       Date
     </label>
     <div class="col-sm-10">
       <input type="text" id="date" name="date" placeholder="Date" class="form-control" value="<%= @interaction.date %>">
     </div>
-  </div> -->
+  </div>
 
 
 
