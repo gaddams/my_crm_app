@@ -15,9 +15,8 @@ class CompaniesController < ApplicationController
     @company = Company.new
     @company.name = params[:name]
     @company.status = params[:status]
-    @company.owner_id = params[:owner_id]
+    @company.user_id = params[:user_id]
     @company.contact_id = params[:contact_id]
-    @company.conversation_history = params[:conversation_history]
 
     if @company.save
       redirect_to "/companies", :notice => "Company created successfully."
