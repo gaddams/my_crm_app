@@ -35,11 +35,11 @@
 
   <!-- Label and input for owner_id -->
   <div class="form-group">
-    <label for="owner_id" class="col-sm-2 control-label">
+    <label for="user_id" class="col-sm-2 control-label">
       Owner
     </label>
     <div class="col-sm-10">
-      <input type="text" id="owner_id" name="owner_id" placeholder="Owner" class="form-control" value="<%= @company.owner_id %>">
+      <input type="text" id="user_id" name="user_id" placeholder="Owner" class="form-control" value="<%= @company.user_id %>">
     </div>
   </div>
 
@@ -50,16 +50,6 @@
     </label>
     <div class="col-sm-10">
       <input type="text" id="contact_id" name="contact_id" placeholder="Contact" class="form-control" value="<%= @company.contact_id %>">
-    </div>
-  </div>
-
-  <!-- Label and input for conversation_history -->
-  <div class="form-group">
-    <label for="conversation_history" class="col-sm-2 control-label">
-      Conversation history
-    </label>
-    <div class="col-sm-10">
-      <textarea id="conversation_history" name="conversation_history" placeholder="Conversation history" class="form-control" rows="3"><%= @company.conversation_history %></textarea>
     </div>
   </div>
 

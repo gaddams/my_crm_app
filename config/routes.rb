@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
 
   root 'interactions#index'
+
+  get('/my_companies', { :controller => 'companies', :action => 'my_companies' })
+
   # Routes for the Contact resource:
   # CREATE
   get('/contacts/new', { :controller => 'contacts', :action => 'new' })

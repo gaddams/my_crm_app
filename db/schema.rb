@@ -16,9 +16,8 @@ ActiveRecord::Schema.define(version: 20140601002109) do
   create_table "companies", force: true do |t|
     t.string   "name"
     t.string   "status"
-    t.integer  "owner_id"
+    t.integer  "user_id"
     t.integer  "contact_id"
-    t.text     "conversation_history"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

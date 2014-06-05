@@ -53,4 +53,12 @@ class CompaniesController < ApplicationController
 
     redirect_to "/companies", :notice => "Company deleted."
   end
+
+  def my_companies
+    @companies = current_user.companies
+    render 'index'
+  end
+
+
+
 end

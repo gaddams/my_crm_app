@@ -19,11 +19,9 @@ user.password_confirmation = "lions123"
 user.save
 
 company_hashes = [
-{:name => "PayPal", :status => "WIP", :contact_id => 1},
-{:name => "PayPal", :status => "WIP", :contact_id => 2},
-{:name => "Accenture", :status => "WIP", :contact_id => 3},
-{:name => "Accenture", :status => "WIP", :contact_id => 4},
-{:name => "Autodesk", :status => "WIP", :contact_id => 5}
+{:name => "PayPal", :status => "WIP"},
+{:name => "Accenture", :status => "WIP"},
+{:name => "Autodesk", :status => "WIP"}
 ]
 
 company_hashes.each do |company_hash|
@@ -33,7 +31,7 @@ company_hashes.each do |company_hash|
   company.contact_id = company_hash[:contact_id]
 
   random_user = User.offset(rand(User.count)).limit(1).first
-  company.owner_id = random_user.id
+  company.user_id = random_user.id
   company.save
 end
 
@@ -42,8 +40,8 @@ puts "There are now #{Company.count} companies."
 contact_hashes = [
 {:name => "Amol", :company_id => 1, :hr => false, :kelloggalum => true},
 {:name => "Keith", :company_id => 1, :hr => false, :kelloggalum => true},
-{:name => "Paul", :company_id => 3, :hr => false, :kelloggalum => true},
-{:name => "Autodesk", :company_id => 5, :hr => false, :kelloggalum => true}
+{:name => "Paul", :company_id => 2, :hr => false, :kelloggalum => true},
+{:name => "Autodesk", :company_id => 3, :hr => false, :kelloggalum => true}
 ]
 
 contact_hashes.each do |contact_hash|
@@ -51,7 +49,7 @@ contact_hashes.each do |contact_hash|
   contact.name = contact_hash[:name]
   contact.company_id = contact_hash[:company_id]
   contact.hr = contact_hash[:hr]
-  contact.kelloggalum = contact_hash[:kelloggalum] 
+  contact.kelloggalum = contact_hash[:kelloggalum]
   contact.save
 end
 puts "There are now #{Contact.count} contacts."
@@ -69,7 +67,7 @@ interaction_hashes.each do |interaction_hash|
   interaction = Interaction.new
   interaction.date = interaction_hash[:date]
   interaction.message = interaction_hash[:message]
-  interaction.contact_id = interaction_hash[:contact_id] 
+  interaction.contact_id = interaction_hash[:contact_id]
   interaction.user_id = interaction_hash[:user_id]
   interaction.lastremindedon = interaction_hash[:lastremindedon]
   interaction.save
