@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  root 'interactions#index'
+  root 'companies#index'
 
   get('/my_companies', { :controller => 'companies', :action => 'my_companies' })
 
