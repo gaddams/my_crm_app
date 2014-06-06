@@ -55,7 +55,6 @@ class CompaniesController < ApplicationController
 
   def my_companies
     @companies = current_user.companies
-    render 'index'
   end
 
 
